@@ -11,24 +11,25 @@ void printArrays(int[], int) ;
 int main()
 {
     int myArray[] = {2, 1, 5, 3, 4, 92, 76, 54};
-    int myArraySize = sizeof(myArray)/sizeof(myArray[0]); //Never used
-   printArrays(myArray, myArraySize);
+    int myArraySize = sizeof(myArray)/sizeof(myArray[0]); //Allows us to get an integer value for array size. 
+                                                          //Method unavailble in C++
+   printArrays(myArray, myArraySize);                     //Completes shellSort and prints out data 
 }    
 
-void printArrays(int a[], int size) 
+void printArrays(int a[], int size)                    //Takes in our array and array size, spits out unsorted and sorted arrays
 {
     cout << "Unsorted: ";
-     for(int i=0; i < size; i++)
+     for(int i=0; i < size; i++)                        //Printing each unsorted array element
     {
      cout << " " << a[i] << " ";   
     }
     
-    cout << "\n";
+    cout << "\n";    //Some spacing
     
-    shellSort(a); 
+    shellSort(a);                                        //Call to shellSort function
     
     cout << "Sorted ";    
-     for(int i=0; i < size; i++)
+     for(int i=0; i < size; i++)                         //Printing every sortd array element
     {
      cout << " " << a[i] << " ";   
     }
@@ -36,7 +37,7 @@ void printArrays(int a[], int size)
     
 }
     
-void shellSort(int a[])
+void shellSort(int a[])                                 /THE SHELLSORT
 {    
 int i, j, k, h, v; 
 
