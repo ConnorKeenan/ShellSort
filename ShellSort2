@@ -1,0 +1,87 @@
+// Example program
+#include <iostream>
+#include <string>
+using namespace std;
+void shellSort(int[]);
+void printArrays(int[], int) ;
+int main()
+{
+int myArray[] = {101, 21, 521, 30, 435, 92};
+int myArraySize = sizeof(myArray)/sizeof(myArray[0]); //Never used
+printArrays(myArray, myArraySize);
+}
+void printArrays(int a[], int size)
+{
+cout << "Unsorted: ";
+for(int i=0; i < size; i++)
+{
+cout << " " << a[i] << " ";
+}
+cout << "\n";
+shellSort(a);
+cout << "Sorted ";
+for(int i=0; i < size; i++)
+{
+cout << " " << a[i] << " ";
+}
+}
+void shellSort(int ar[])
+{
+    
+      int j;
+int size = sizeof(ar)/sizeof(ar[0]);
+ 
+
+  //Narrow the array by 2 everytime
+
+  for (int gap = size / 2; gap > 0; gap /= 2)
+
+  {
+
+    for (int i = gap; i < size; ++i)
+
+    {
+
+      int temp = ar[i];
+
+      for (j = i; j >= gap && temp < ar[j - gap]; j -= gap)
+
+      {
+
+        ar[j] = ar[j - gap];
+
+      }
+
+      ar[j] = temp;
+
+    } }
+
+  }
+
+    
+    
+    /* 
+int i, j, k, h, v;
+int aSize = sizeof(a)/sizeof(a[0]);
+int n = aSize;
+//the cols array contains "optimal" column intervals
+int cols[] = { 1391376, 463792, 198768, 86961, 33936,
+13776, 4592, 1968, 861, 336, 112, 48,
+21, 7, 3, 1
+};
+for (k=0; k<16; k++) //vary column size
+{
+h = cols[k];
+for (i=h; i<n; i++)
+{
+v=a[i];
+j =i;
+while (j>=h && a[j-h]>v)
+{
+a[j]=a[j-h];
+j=j-h;
+}
+a[j]=v;
+}//end for loop in h
+}//end for loop in k
+}//end shellsort()*/
