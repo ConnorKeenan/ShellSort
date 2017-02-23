@@ -5,26 +5,36 @@
 using namespace std;
 
 void shellSort(int[]);
+void printArrays(int[], int) ;
 
 
 int main()
 {
     int myArray[] = {2, 1, 5, 3, 4, 92, 76, 54};
-    //int myArraySize = sizeof(myArray)/sizeof(myArray[0]); //Never used
-    for(int ele: myArray)
+    int myArraySize = sizeof(myArray)/sizeof(myArray[0]); //Never used
+   printArrays(myArray, myArraySize);
+}    
+
+void printArrays(int a[], int size) 
+{
+    cout << "Unsorted: ";
+     for(int i=0; i < size; i++)
     {
-     cout << ele;   
+     cout << " " << a[i] << " ";   
     }
     
     cout << "\n";
     
-    shellSort(myArray); 
+    shellSort(a); 
     
-    for(int ele: myArray)
+    cout << "Sorted ";    
+     for(int i=0; i < size; i++)
     {
-     cout << ele;   
+     cout << " " << a[i] << " ";   
     }
-}    
+    
+    
+}
     
 void shellSort(int a[])
 {    
